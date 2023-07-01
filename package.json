@@ -1,6 +1,6 @@
 {
-  "name": "socialagi-lmyield",
-  "version": "0.0.1",
+  "name": "lmyield",
+  "version": "0.0.2",
   "description": "A lightweight language for yielding OpenAI Chat generations into an arbitrary schema",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,9 +39,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Methexis-Inc/SocialAGI.git"
+    "url": "https://github.com/opensouls/LMYield"
   },
-  "author": "SocialAGI",
+  "author": "OpenSouls",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.2",
