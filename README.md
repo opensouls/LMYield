@@ -32,7 +32,7 @@ example usage
 ```
 import LMYield, { LMYieldEvents } from "lmyield";
 
-const lmProgram = `npm
+const lmProgram = `
 {{#context~}}
 {{! this block compiles to system in oai}}
 
@@ -152,7 +152,7 @@ The `LMYield` constructor takes in an `LMYield` program and an array of variable
 const lmYield = new LMYield(program, replacementVars)
 ```
 
-Replacements are referenced via handlebars syntax `{{varName}}`.
+Replacements are referenced via handlebars syntax `{{varName}}` and `replacementVars = [{name: string, value: string}, ...]`
 
 Additionally, an option `LMYieldOptions` object can be passed with contains the OpenAI Model name to be used.
 

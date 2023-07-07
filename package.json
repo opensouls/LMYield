@@ -1,6 +1,6 @@
 {
   "name": "lmyield",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A lightweight language for yielding OpenAI Chat generations into an arbitrary schema",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -15,7 +15,8 @@ const configuration = new Configuration({ apiKey });
 const openaiApi = new OpenAIApi(configuration);
 
 type StringReplacements = {
-  [key: string]: string;
+  name: string,
+  value: string,
 };
 
 type Block = {
@@ -37,8 +38,7 @@ function parseProgram(
 
   // This is a basic regex to find and replace templated variables
   replacements
-    .map((replacement) => Object.entries(replacement)[0])
-    .forEach(([name, value]) => {
+    .forEach(({name, value}) => {
       const variableRegex = new RegExp("{{" + name + "}}", "g");
       str = str.replace(variableRegex, value);
     });
@@ -168,9 +168,6 @@ export enum LMYieldEvents {
 }
 
 type LMProgram = string;
-type Replacement = {
-  [name: string]: string;
-};
 
 export enum LMYieldModels {
   gpt_3_5_turbo = "gpt-3.5-turbo",
@@ -187,7 +184,7 @@ type LMYieldOptions = {
   model: LMYieldModels;
 };
 
-export default class LMYield extends EventEmitter {
+export class LMYield extends EventEmitter {
   public oaiProgram: OAIProgram;
   public yieldInstructions: YieldInstruction[];
   public yields: Yield[];
@@ -195,7 +192,7 @@ export default class LMYield extends EventEmitter {
 
   constructor(
     program: LMProgram,
-    replacements: Replacement[],
+    replacements: StringReplacements[],
     options?: LMYieldOptions
   ) {
     super();

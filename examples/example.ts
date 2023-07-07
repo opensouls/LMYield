@@ -1,4 +1,4 @@
-import LMYield, { LMYieldEvents } from "../src";
+import { LMYield, LMYieldEvents } from "../src";
 
 const lmProgram = `
 {{#context~}}
@@ -55,7 +55,8 @@ Then, Bogus had the following <INTERNAL_DIALOG />
 
 const replacements = [
   {
-    personality: "Bogus, an evil witch that eats children",
+    name: 'personality',
+    value: "Bogus, an evil witch that eats children",
   },
 ];
 
